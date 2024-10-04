@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 
+
 gsap.registerPlugin(useGSAP);
 
 export default function Banner(props: { route: fullpageApi }) {
@@ -21,6 +22,7 @@ export default function Banner(props: { route: fullpageApi }) {
             ease: 'power2.out'
         })
     }, [])
+
 
     return (
         <section className='banner px-5 md:px-10 lg:px-20 section'>

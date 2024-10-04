@@ -10,6 +10,7 @@ import ServiceImage from '@/assets/artifacts/services.png';
 import Career from '@/components/about/Career'
 
 
+
 export default function About() {
     return (
         <>

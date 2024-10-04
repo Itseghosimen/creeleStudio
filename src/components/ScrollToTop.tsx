@@ -1,11 +1,14 @@
+import { fullpageApi } from "@fullpage/react-fullpage";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const ScrollToTop = () => {
+const ScrollToTop = (props: { route: fullpageApi }) => {
     const { pathname } = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (props.route) {
+            props.route.moveTo(1);
+        }
     }, [pathname]);
 
     return null;

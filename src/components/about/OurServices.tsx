@@ -47,7 +47,7 @@ export default function OurServices(props: {
                                 src={props.image}
                                 sizes='100%'
                                 alt="Art Works"
-                                className='object-contain object-center h-full w-full relative z-10' />
+                                className='object-contain object-center h-full w-full max-w-[184px] md:max-w-full relative z-10' />
                             <div className='absolute inset-0 z-10 px-[5%] pt-[4%]'>
                                 <img src={props.video} alt="Animation" className='h-[95%] w-full rounded-2xl' />
                             </div>

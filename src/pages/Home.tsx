@@ -10,6 +10,7 @@ import Navbar from '@/components/Navbar'
 import ReactFullpage from '@fullpage/react-fullpage'
 
 export default function Home() {
+
     return (
         <>
             <Navbar />
@@ -21,6 +22,7 @@ export default function Home() {
                 touchSensitivity={5}
                 scrollingSpeed={1000}
                 render={({ fullpageApi }) => {
+
                     return (
                         <ReactFullpage.Wrapper>
                             <Banner route={fullpageApi} />
@@ -36,6 +38,8 @@ export default function Home() {
                 }
                 }
             />
+
+
         </>
 
 

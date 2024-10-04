@@ -3,16 +3,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Satchel from "./pages/Satchel";
-import ScrollToTop from "./components/ScrollToTop";
-import ScrollRestoration from "./components/ScrollRestoration";
 import Contact from "./pages/Contact";
 
 function App() {
   return (
     <BrowserRouter>
-      {/* Scroll to Top */}
-      <ScrollToTop />
-      <ScrollRestoration />
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
