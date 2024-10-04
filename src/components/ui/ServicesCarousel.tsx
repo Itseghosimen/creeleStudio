@@ -1,0 +1,71 @@
+import Animation from '@/assets/artifacts/services.png';
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay } from 'swiper/modules';
+import SoundDesignVid from '@/assets/motion_graphics/sounddesign.gif'
+import AnimationVid from '@/assets/motion_graphics/Animation.gif'
+import StoryVid from '@/assets/motion_graphics/book2.gif'
+import { motion } from "framer-motion"
+
+export default function ServicesCarousel() {
+    return (
+        <Swiper
+            slidesPerView={'auto'}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
+            spaceBetween={'20'}
+            modules={[Autoplay]}
+            breakpoints={{
+                640: {
+                    autoplay: false
+                }
+            }}
+            className='w-fit h-fit mx-auto'
+        >
+            {
+                [{
+                    image: AnimationVid,
+                    label: 'Animation'
+                },
+                {
+                    image: SoundDesignVid,
+                    label: 'SOUND DESIGN'
+                },
+                {
+                    image: StoryVid,
+                    label: 'STORYBOOKS & COMICS'
+                }].map((items, index) => (
+                    <SwiperSlide key={index} className='xl:max-w-80 lg:max-w-60 max-w-52'>
+                        <motion.div
+                            initial={{
+                                translateY: 150
+                            }}
+                            animate={{
+                                translateY: 0
+                            }}
+                            transition={{
+                                ease: 'anticipate',
+                                duration: .5
+                            }}
+                            className='drop-shadow-2xl'
+                        >
+                            <img
+                                src={Animation}
+                                alt='Services'
+                                sizes='100%'
+                                className='w-full h-full object-contain object-center relative z-0'
+                            />
+                            <div className='absolute inset-0 z-10 px-[5%] pt-[4%]'>
+                                <img src={items.image} alt="Animation" className='h-[85%] w-full rounded-2xl' />
+                                <div className="flex-1 h-[15%] items-center justify-center flex">
+                                    <h6 className='uppercase relative z-10 xl:text-2xl md:text-lg text-lg btn_text_border'>{items.label}</h6>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </SwiperSlide>
+                ))
+            }
+        </Swiper>
+    )
+}
